@@ -1,6 +1,8 @@
 = resource_defaults
 
-Description goes here.
+If you have resources accessible from multiple routes, it's useful to be able to set default actions. This gem makes that possible.
+
+Works with Rails 3.
 
 == Note on Patches/Pull Requests
  
