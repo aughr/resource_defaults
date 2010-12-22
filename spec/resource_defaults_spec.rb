@@ -1,4 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require 'active_support/core_ext/hash/slice'
 
 describe "ResourceDefaults" do
   before(:all) do
