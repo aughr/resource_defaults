@@ -4,6 +4,7 @@ require 'active_support/core_ext/hash/slice'
 describe "ResourceDefaults" do
   before(:all) do
     ActionDispatch::Routing::Mapper.send :include, ResourceDefaults
+    ActionDispatch::Routing::Mapper.extend ResourceDefaults::ClassMethods
   end
 
   before(:each) do

@@ -18,6 +18,7 @@ coverage
 rdoc
 pkg
 .bundle
+Gemfile.lock
 
 ## PROJECT::SPECIFIC
 .rvmrc

@@ -2,11 +2,19 @@ module ResourceDefaults
   class Railtie < Rails::Railtie
     initializer 'resource_defaults.load', :before => 'action_dispatch.prepare_dispatcher' do
       ActionDispatch::Routing::Mapper.send :include, ResourceDefaults
+      ActionDispatch::Routing::Mapper.extend ResourceDefaults::ClassMethods
     end
   end
 
-  def initialize(*args)
-    super
+  module ClassMethods
+    def new(*args)
+      object = super
+      object.initialize_resource_defaults
+      object
+    end
+  end
+
+  def initialize_resource_defaults
     @scope[:resource_defaults] = {}
     @scope[:resource_defaults_in_progress] = []
   end
